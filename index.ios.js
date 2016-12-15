@@ -1,22 +1,22 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
+  TouchableHighlight,
+  ListView,
   Text,
   View,
   Navigator
 } from 'react-native';
 
+
 import Home from './components/Home';
-import GenericContainer from './components/GenericContainer'
+import DontGetMeStarted from './components/DontGetMeStarted';
+import General from './components/General';
+import Travel from './components/Travel';
 
 export default class IceBreakr extends Component {
+
   render() {
     return (
       <Navigator
@@ -26,21 +26,30 @@ export default class IceBreakr extends Component {
                       }}
         renderScene={
           this.navigatorRenderScene
-        }
-      />
-    )
-  }
+        } />
 
+)}
   navigatorRenderScene(route,navigator){
     _navigator = navigator;
     switch(route.id){
       case 'Home':
         return(<Home navigator={navigator} title='First' />)
-      case 'GenericContainer':
-        return(<GenericContainer navigator={navigator} title='GenericContainer' />)
+
+      case 'General':
+        return(<General navigator={navigator} title='General' />)
+        return(<Home navigator={navigator} title='First' />)
+
+      case 'Travel':
+        return(<Travel navigator={navigator} title='Travel' />)
+        return(<Home navigator={navigator} title='First' />)
+
+      case 'DontGetMeStarted':
+        return(<DontGetMeStarted navigator={navigator} title='DontGetMeStarted' />)
+        return(<Home navigator={navigator} title='First' />)
     }
   }
 }
-
-
 AppRegistry.registerComponent('IceBreakr', () => IceBreakr);
+
+
+console.disableYellowBox = true;
