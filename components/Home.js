@@ -33,6 +33,11 @@ export default class Home extends Component {
           id:'DontGetMeStarted'
         })
       }
+      onWouldYouRatherPress(){
+        this.props.navigator.push({
+          id:'WouldYouRather'
+        })
+      }
     render(){
       return(
         <View style={styles.container}>
@@ -52,6 +57,11 @@ export default class Home extends Component {
           <TouchableHighlight style={styles.fourthContainer} onPress={this.onDontGetMeStartedPress.bind(this)}>
             <View>
               <Text style={styles.titles}>Don't Get Me Started</Text>
+            </View>
+          </TouchableHighlight>
+          <TouchableHighlight style={styles.fifthContainer} onPress={this.onWouldYouRatherPress.bind(this)}>
+            <View>
+              <Text style={styles.titles}>Would You Rather</Text>
             </View>
           </TouchableHighlight>
         </View>
@@ -104,5 +114,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-
+  fifthContainer: {
+    flex:1,
+    backgroundColor: "#304FFE",
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });

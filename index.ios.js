@@ -14,6 +14,7 @@ import Home from './components/Home';
 import DontGetMeStarted from './components/DontGetMeStarted';
 import General from './components/General';
 import Travel from './components/Travel';
+import WouldYouRather from './components/WouldYouRather';
 
 export default class IceBreakr extends Component {
 
@@ -45,6 +46,10 @@ export default class IceBreakr extends Component {
 
       case 'DontGetMeStarted':
         return(<DontGetMeStarted navigator={navigator} title='DontGetMeStarted' />)
+        return(<Home navigator={navigator} title='First' />)
+
+      case 'WouldYouRather':
+        return(<WouldYouRather navigator={navigator} title='WouldYouRather' />)
         return(<Home navigator={navigator} title='First' />)
     }
   }
